@@ -51,8 +51,21 @@ extension MapEx<D, S> on Map<D, S>? {
     return count;
   }
 
+  /// Returns true if there is at least one entry that matches the given [predicate].
+  /// [predicate] must not be null.
+  bool any(bool Function(D key, S value) predicate) {
+    if (isMapEmpty().isEmpty) {
+      return false;
+    }
+    for (final MapEntry<D, S> entry in isMapEmpty().entries) {
+      if (predicate(entry.key, entry.value)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   /// Returns a new map containing all key-value pairs matching the given [predicate].
-  ///
   /// The returned map preserves the entry iteration order of the original map.
   Map<D, S> filter(bool Function(MapEntry<D, S> entry) predicate) {
     final result = <D, S>{};
@@ -67,10 +80,10 @@ extension MapEx<D, S> on Map<D, S>? {
   /// Returns `true` if there is no entries in the map that match the given [predicate].
   /// [predicate] must not be null.
   bool predicate(bool Function(D key, S value) predicate) {
-    if (this?.isEmpty ?? false) {
+    if (isMapEmpty().isEmpty) {
       return true;
     }
-    for (final MapEntry<D, S> entry in this?.entries ?? {}) {
+    for (final MapEntry<D, S> entry in isMapEmpty().entries) {
       if (predicate(entry.key, entry.value)) {
         return false;
       }

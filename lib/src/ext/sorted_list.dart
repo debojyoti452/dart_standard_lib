@@ -17,12 +17,15 @@
  *
  */
 
-library dart_std;
+part of dart_std;
 
-part 'src/ext/int_ext.dart';
-part 'src/ext/list_ext.dart';
-part 'src/ext/map_ext.dart';
-part 'src/ext/sorted_list.dart';
-part 'src/ext/string_ext.dart';
-part 'src/utils/pair.dart';
-part 'src/utils/triple.dart';
+Comparator<D> _getComparator<D>(
+    int order, Comparable Function(D element) selector,
+    {Comparator<D>? parent}) {
+  int newComparator(D a, D b) {
+    return order * selector(a).compareTo(selector(b));
+  }
+
+  // return parent?.compose(newComparator) ?? newComparator;
+  return newComparator;
+}
