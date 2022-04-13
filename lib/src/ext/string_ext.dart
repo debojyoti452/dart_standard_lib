@@ -23,6 +23,30 @@ const _ascii = 0x007f;
 const _latin1 = 0x00ff;
 
 extension StringExt on String {
+  /// Returns a string with prefix added
+  /// var value = 'eb'.prefix('D');
+  /// print(value); Deb
+  String prefix(String prefix) {
+    switch (length) {
+      case 0:
+        return this;
+      default:
+        return prefix + this;
+    }
+  }
+
+  /// Returns a string with suffix added
+  /// var value = 'De'.suffix('b');
+  /// print(value); Deb
+  String suffix(String suffix) {
+    switch (length) {
+      case 0:
+        return this;
+      default:
+        return suffix + this;
+    }
+  }
+
   /// Returns a copy of this string having its first letter uppercased, or the
   /// original string, if it's empty or already starts with an upper case
   /// letter.
@@ -222,4 +246,25 @@ extension StringExt on String {
 
   /// Returns `true` if the string is neither null nor empty.
   bool get isNotNullOrEmpty => !isNullOrEmpty;
+}
+
+extension StringJoin<T extends Iterable> on T {
+  String joinToString({
+    String? separator,
+    String? prefix,
+    String? postfix,
+    int? limit = -1,
+    String? truncated,
+    Function(T)? transform,
+  }) {
+    return Utils.joinStringUtils(
+      toString(),
+      separator: separator,
+      prefix: prefix,
+      postfix: postfix,
+      limit: limit,
+      truncated: truncated,
+      transform: transform,
+    );
+  }
 }

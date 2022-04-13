@@ -17,4 +17,33 @@
  *
  */
 
-mixin Utils {}
+import 'package:dart_std/dart_std.dart';
+
+mixin Utils {
+  static String joinStringUtils<T>(
+    String text, {
+    String? separator,
+    String? prefix,
+    String? postfix,
+    int? limit = -1,
+    String? truncated,
+    Function(T)? transform,
+  }) {
+    text = text.removeSurrounding(prefix: '[', suffix: ']');
+    var result = text;
+
+    if (separator != null && separator.isNotEmpty) {
+      result.split(separator);
+    }
+
+    if (prefix != null && prefix.isNotEmpty) {
+      result = text.prefix(prefix);
+    }
+
+    if (postfix != null && postfix.isNotEmpty) {
+      result = text.suffix(postfix);
+    }
+
+    return result;
+  }
+}

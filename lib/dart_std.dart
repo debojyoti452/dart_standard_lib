@@ -19,6 +19,8 @@
 
 library dart_std;
 
+import 'package:dart_std/src/utils/utils.dart';
+
 part 'src/ext/int_ext.dart';
 part 'src/ext/list_ext.dart';
 part 'src/ext/map_ext.dart';
