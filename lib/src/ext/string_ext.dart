@@ -43,7 +43,7 @@ extension StringExt on String {
       case 0:
         return this;
       default:
-        return suffix + this;
+        return this + suffix;
     }
   }
 
@@ -253,18 +253,18 @@ extension StringJoin<T extends Iterable> on T {
     String? separator,
     String? prefix,
     String? postfix,
-    int? limit = -1,
+    int? limit,
     String? truncated,
     Function(T)? transform,
   }) {
-    return Utils.joinStringUtils(
-      toString(),
-      separator: separator,
-      prefix: prefix,
-      postfix: postfix,
-      limit: limit,
-      truncated: truncated,
+    return Utils.joinStringUtils<T>(
+      this,
+      separator: separator ?? ', ',
+      prefix: prefix ?? '',
+      postfix: postfix ?? '',
+      limit: limit ?? -1,
+      truncated: truncated ?? '...',
       transform: transform,
-    );
+    ).toString();
   }
 }

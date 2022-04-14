@@ -17,33 +17,32 @@
  *
  */
 
-import 'package:dart_std/dart_std.dart';
-
 mixin Utils {
   static String joinStringUtils<T>(
-    String text, {
-    String? separator,
-    String? prefix,
-    String? postfix,
-    int? limit = -1,
-    String? truncated,
+    T text, {
+    required String separator,
+    required String prefix,
+    required String postfix,
+    required int limit,
+    required String truncated,
     Function(T)? transform,
   }) {
-    text = text.removeSurrounding(prefix: '[', suffix: ']');
-    var result = text;
+    var count = 0;
+    StringBuffer buffer = StringBuffer(prefix);
 
-    if (separator != null && separator.isNotEmpty) {
-      result.split(separator);
+    for (var element in (text as Iterable)) {
+      if (++count > 1) buffer.write(separator);
+
+      if (limit < 0 || count <= limit) {
+        buffer.write(element);
+      } else {
+        break;
+      }
     }
 
-    if (prefix != null && prefix.isNotEmpty) {
-      result = text.prefix(prefix);
-    }
+    if (limit >= 0 && count > limit) buffer.write(truncated);
+    buffer.write(postfix);
 
-    if (postfix != null && postfix.isNotEmpty) {
-      result = text.suffix(postfix);
-    }
-
-    return result;
+    return buffer.toString();
   }
 }

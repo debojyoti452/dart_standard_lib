@@ -53,8 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
     // debugPrint(10.toLikes());
     // debugPrint(map.filter((entry) => entry.key == 'Deb').values.toString());
     // debugPrint(20.divide(2.5).toString());
-    debugPrint(intArray.joinToString(prefix: '20, ', separator: ','));
+    debugPrint(intArray.joinToString());
     debugPrint(strArray.joinToString());
+
+    intArray.join();
   }
 
   @override
