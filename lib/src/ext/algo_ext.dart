@@ -17,16 +17,4 @@
  *
  */
 
-library dart_std;
-
-import 'package:characters/characters.dart' as chr;
-import 'package:collection/collection.dart' as std;
-import 'package:dart_std/src/utils/utils.dart';
-
-part 'src/ext/int_ext.dart';
-part 'src/ext/list_ext.dart';
-part 'src/ext/map_ext.dart';
-part 'src/ext/sorted_list.dart';
-part 'src/ext/string_ext.dart';
-part 'src/utils/pair.dart';
-part 'src/utils/triple.dart';
+extension BinarySearch<D> on List<D> {}

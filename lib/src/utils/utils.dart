@@ -17,16 +17,32 @@
  *
  */
 
-library dart_std;
+mixin Utils {
+  static String joinStringUtils<D>(
+    D iterator, {
+    required String separator,
+    required String prefix,
+    required String postfix,
+    required int limit,
+    required String truncated,
+    Function(D)? transform,
+  }) {
+    var count = 0;
+    StringBuffer buffer = StringBuffer(prefix);
 
-import 'package:characters/characters.dart' as chr;
-import 'package:collection/collection.dart' as std;
-import 'package:dart_std/src/utils/utils.dart';
+    for (var element in (iterator as Iterable)) {
+      if (++count > 1) buffer.write(separator);
 
-part 'src/ext/int_ext.dart';
-part 'src/ext/list_ext.dart';
-part 'src/ext/map_ext.dart';
-part 'src/ext/sorted_list.dart';
-part 'src/ext/string_ext.dart';
-part 'src/utils/pair.dart';
-part 'src/utils/triple.dart';
+      if (limit < 0 || count <= limit) {
+        buffer.write(element);
+      } else {
+        break;
+      }
+    }
+
+    if (limit >= 0 && count > limit) buffer.write(truncated);
+    buffer.write(postfix);
+
+    return buffer.toString();
+  }
+}

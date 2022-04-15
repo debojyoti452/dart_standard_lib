@@ -26,6 +26,24 @@ extension IntExt on num? {
     }
     return true;
   }
+
+  String toLikes() {
+    var num = this ?? 0;
+    if (num > 999 && num < 99999) {
+      return "${(num / 1000).toStringAsFixed(1)}K";
+    } else if (num > 99999 && num < 999999) {
+      return "${(num / 1000).toStringAsFixed(0)}K";
+    } else if (num > 999999 && num < 999999999) {
+      return "${(num / 1000000).toStringAsFixed(1)}M";
+    } else if (num > 999999999) {
+      return "${(num / 1000000000).toStringAsFixed(1)}B";
+    } else {
+      return num.toString();
+    }
+  }
+
+  /// returns if the number is is even or not
+  bool get isEven => ((this ?? 0) % 2 == 0) ? true : false;
 }
 
 extension OrdinalInt<T extends int> on T {
@@ -47,4 +65,30 @@ extension OrdinalInt<T extends int> on T {
       }
     }
   }
+}
+
+extension NumArith<T extends num> on T {
+  /// Divide val if if it not null else returns `this`
+  double divide(dynamic val) {
+    if (val == null) return toDouble();
+    return toDouble() / val;
+  }
+
+  /// Multiply val if if it not null else returns `this`
+  T? multiply(T? val) => val == null ? this : this * val as T?;
+
+  /// returns null if val is null else returns `this` * val
+  T? multiplyOrNull(T? val) => val == null ? null : this * val as T?;
+
+  /// Minus val if if it not null else returns `this`
+  T? minus(T? val) => val == null ? this : this - val as T?;
+
+  /// returns null if val is null else returns `this` - val
+  T? minusOrNull(T? val) => val == null ? null : this - val as T?;
+
+  /// Adds val if if it not null else returns `this`
+  T? plus(T? val) => val == null ? this : this + val as T?;
+
+  /// returns null if val is null else returns `this` + val
+  T? plusOrNull(T? val) => val == null ? null : this + val as T?;
 }

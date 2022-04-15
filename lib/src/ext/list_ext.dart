@@ -72,4 +72,42 @@ extension ListExt<D> on List<D> {
     if (resultSize == 1) return [first];
     return sublist(0, length - n);
   }
+
+  List<D> dropLastWhile(bool Function(D element) predicate) {
+    int? endIndex;
+    for (var i = lastIndex; i >= 0; i--) {
+      if (!predicate(this[i])) {
+        endIndex = i;
+        break;
+      }
+    }
+    if (endIndex == null) return [];
+    return sublist(0, endIndex + 1);
+  }
+
+  int lowerBound(D value, {int Function(D a, D b)? compare}) {
+    return std.lowerBound(this, value, compare: compare);
+  }
+
+  int binarySearch(D value, {int Function(D a, D b)? compare}) {
+    return std.binarySearch(this, value, compare: compare);
+  }
+
+  void insertionSort({Comparator<D>? comparator, int start = 0, int? end}) {
+    std.insertionSort(this, compare: comparator, start: start, end: end);
+  }
+
+  void mergeSort({int start = 0, int? end, Comparator<D>? comparator}) {
+    std.mergeSort(this, start: start, end: end, compare: comparator);
+  }
+
+  void swap(int indexA, int indexB) {
+    final temp = this[indexA];
+    this[indexA] = this[indexB];
+    this[indexB] = temp;
+  }
+}
+
+extension ListFlattenExtension<D> on List<List<D>> {
+  List<D> flatten() => [for (final list in this) ...list];
 }

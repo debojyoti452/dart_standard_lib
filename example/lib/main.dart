@@ -35,7 +35,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final int _counter = 0;
   final List<int> intArray = [0, 1, 2, 3];
+  final List<String> strArray = ["Deb", "Singha", "Ana", "Majumdar"];
   static const Triple<int, bool, String> _triple = Triple(1, false, "Deb");
+  final map = {"Deb": "Singha", "Ana": "Majumdar"};
 
   void _incrementCounter() {
     // debugPrint(2.toOrdinal());
@@ -47,7 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // debugPrint(intArray.drop(1).toString());
     // debugPrint(intArray.dropWhile((element) => element.isEven).toString());
     // debugPrint(intArray.dropLast(2).toString());
-    debugPrint(_triple.third.toString());
+    // debugPrint(_triple.third.toString());
+    // debugPrint(10.toLikes());
+    // debugPrint(map.filter((entry) => entry.key == 'Deb').values.toString());
+    // debugPrint(20.divide(2.5).toString());
+    debugPrint(intArray.joinToString());
+    debugPrint(strArray.joinToString());
+
+    intArray.join();
   }
 
   @override
