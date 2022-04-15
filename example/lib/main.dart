@@ -40,23 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
   final map = {"Deb": "Singha"};
 
   void _incrementCounter() {
-    // debugPrint(2.toOrdinal());
-    // debugPrint(0.isNull().toString());
-    // debugPrint(intArray.lastIndex.toString());
-    // debugPrint(intArray.elementAtOrNull(5).toString());
-    // debugPrint(intArray.firstIndex.toString());
-    // debugPrint(intArray.indices.toString());
-    // debugPrint(intArray.drop(1).toString());
-    // debugPrint(intArray.dropWhile((element) => element.isEven).toString());
-    // debugPrint(intArray.dropLast(2).toString());
-    // debugPrint(_triple.third.toString());
-    // debugPrint(10.toLikes());
-    // debugPrint(map.filter((entry) => entry.key == 'Deb').values.toString());
-    // debugPrint(20.divide(2.5).toString());
+    debugPrint(2.toOrdinal());
+    debugPrint(0.isNull().toString());
+    debugPrint(intArray.lastIndex.toString());
+    debugPrint(intArray.elementAtOrNull(5).toString());
+    debugPrint(intArray.firstIndex.toString());
+    debugPrint(intArray.indices.toString());
+    debugPrint(intArray.drop(1).toString());
+    debugPrint(intArray.dropWhile((element) => element.isEven).toString());
+    debugPrint(intArray.dropLast(2).toString());
+    debugPrint(_triple.third.toString());
+    debugPrint(10.toLikes());
+    debugPrint(map.filter((entry) => entry.key == 'Deb').values.toString());
+    debugPrint(20.divide(2.5).toString());
     debugPrint(intArray.joinToString());
     debugPrint(strArray.joinToString());
-
-    intArray.join();
   }
 
   @override

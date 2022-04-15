@@ -47,14 +47,6 @@ extension StringExt on String {
     }
   }
 
-  /// Returns a copy of this string having its first letter uppercased, or the
-  /// original string, if it's empty or already starts with an upper case
-  /// letter.
-  ///
-  /// ```dart
-  /// print('abcd'.capitalize()) // Abcd
-  /// print('Abcd'.capitalize()) // Abcd
-  /// ```
   String firstLetterCapitalize() {
     switch (length) {
       case 0:
@@ -66,13 +58,6 @@ extension StringExt on String {
     }
   }
 
-  /// Returns a copy of this string having its first letter lowercased, or the
-  /// original string, if it's empty or already starts with a lower case letter.
-  ///
-  /// ```dart
-  /// print('abcd'.decapitalize()) // abcd
-  /// print('Abcd'.decapitalize()) // abcd
-  /// ```
   String firstLetterLowercase() {
     switch (length) {
       case 0:

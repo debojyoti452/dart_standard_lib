@@ -1,7 +1,7 @@
 name: dart_std
 description: A Open Source Project.
-version: 0.0.2
-homepage: https://github.com/debojyoti452/dart_standard_lib
+version: 0.0.3
+homepage: https://github.com/debojyoti452/dart_std
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

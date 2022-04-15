@@ -109,5 +109,5 @@ extension ListExt<D> on List<D> {
 }
 
 extension ListFlattenExtension<D> on List<List<D>> {
-  List<D> flatten() => [for (final list in this) ...list];
+  List<D> toFlatten() => [for (final list in this) ...list];
 }
