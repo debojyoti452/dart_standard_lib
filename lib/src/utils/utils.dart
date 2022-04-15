@@ -18,19 +18,19 @@
  */
 
 mixin Utils {
-  static String joinStringUtils<T>(
-    T text, {
+  static String joinStringUtils<D>(
+    D iterator, {
     required String separator,
     required String prefix,
     required String postfix,
     required int limit,
     required String truncated,
-    Function(T)? transform,
+    Function(D)? transform,
   }) {
     var count = 0;
     StringBuffer buffer = StringBuffer(prefix);
 
-    for (var element in (text as Iterable)) {
+    for (var element in (iterator as Iterable)) {
       if (++count > 1) buffer.write(separator);
 
       if (limit < 0 || count <= limit) {

@@ -19,6 +19,8 @@
 
 library dart_std;
 
+import 'package:characters/characters.dart' as chr;
+import 'package:collection/collection.dart' as std;
 import 'package:dart_std/src/utils/utils.dart';
 
 part 'src/ext/int_ext.dart';

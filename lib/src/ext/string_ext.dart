@@ -92,24 +92,8 @@ extension StringExt on String {
   /// characters except of whitespace characters.
   bool get isNotBlank => !isBlank;
 
-  /// Returns `true` if the whole string is upper case.
-  ///
-  /// ```dart
-  /// 'HI'.isUpperCase // true
-  /// 'Hi'.isUpperCase // false
-  /// '!'.isUpperCase // false
-  /// 'HEY, YOU!'.isUpperCase // true
-  /// ```
   bool get isUpperCase => this == toUpperCase() && this != toLowerCase();
 
-  /// Returns `true` if the whole string is lower case.
-  ///
-  /// ```dart
-  /// 'hi'.isLowerCase // true
-  /// 'Hi'.isLowerCase // false
-  /// '!'.isLowerCase // false
-  /// 'hey, you!'.isLowerCase // true
-  /// ```
   bool get isLowerCase => this == toLowerCase() && this != toUpperCase();
 
   /// Returns `true` if the first character is upper case.
@@ -135,37 +119,20 @@ extension StringExt on String {
   }
 
   /// Returns a new string with characters in reversed order.
-  /*String get reversed {
-    // final range = characters.Characters(this).iteratorAtEnd;
-    // final buffer = StringBuffer();
-    // while (range.moveBack()) {
-    //   buffer.write(range.current);
-    // }
-    // return buffer.toString();
-  }*/
+  String get reversed {
+    final range = chr.Characters(this).iteratorAtEnd;
+    final buffer = StringBuffer();
+    while (range.moveBack()) {
+      buffer.write(range.current);
+    }
+    return buffer.toString();
+  }
 
   /// Returns `true` if the string can be parsed as an integer.
   bool get isInt => toIntOrNull() != null;
 
-  /// Parses the string as an [int] number and returns the result.
-  ///
-  /// The [radix] must be in the range 2..36. The digits used are
-  /// first the decimal digits 0..9, and then the letters 'a'..'z' with
-  /// values 10 through 35. Also accepts upper-case letters with the same
-  /// values as the lower-case ones.
-  ///
-  /// If no [radix] is given then it defaults to 10.
   int toInt({int? radix}) => int.parse(this, radix: radix);
 
-  /// Parses the string as an [int] number and returns the result or `null` if
-  /// the string is not a valid representation of a number.
-  ///
-  /// The [radix] must be in the range 2..36. The digits used are
-  /// first the decimal digits 0..9, and then the letters 'a'..'z' with
-  /// values 10 through 35. Also accepts upper-case letters with the same
-  /// values as the lower-case ones.
-  ///
-  /// If no [radix] is given then it defaults to 10.
   int? toIntOrNull({int? radix}) => int.tryParse(this, radix: radix);
 
   /// Returns `true` if the string can be parsed as a `double`.
@@ -174,27 +141,8 @@ extension StringExt on String {
   /// Parses the string as a [double] number and returns the result.
   double toDouble() => double.parse(this);
 
-  /// Parses the string as a [double] number and returns the result or `null`
-  /// if the String is not a valid representation of a number.
   double? toDoubleOrNull() => double.tryParse(this);
 
-  /// Encodes String as UTF-8.
-  // List<int> toUtf8() => utf8.encode(this);
-
-  /// Encodes String as UTF-16.
-  List<int> toUtf16() => codeUnits;
-
-  /// Calculates the MD5 digest and returns the value as a [String] of
-  /// hexadecimal digits.
-  ///
-  /// ```dart
-  /// print('abc'.md5); //900150983cd24fb0d6963f7d28e17f72
-  /// print('message digest'.md5); //f96b697d7cb7938d525a2f31aaf161d0
-  /// ```
-  // String get md5 => crypto.md5.convert(toUtf8()).toString();
-
-  /// If this [String] starts with the given [prefix], returns a copy of this
-  /// string with the prefix removed. Otherwise, returns this [String].
   String removePrefix(String prefix) {
     if (startsWith(prefix)) {
       return substring(prefix.length, length);
@@ -203,8 +151,6 @@ extension StringExt on String {
     }
   }
 
-  /// If this [String] ends with the given [suffix], returns a copy of this
-  /// [String] with the suffix removed. Otherwise, returns this [String].
   String removeSuffix(String suffix) {
     if (endsWith(suffix)) {
       return substring(0, length - suffix.length);
@@ -213,9 +159,6 @@ extension StringExt on String {
     }
   }
 
-  /// Removes from a [String] both the given [prefix] and [suffix] if and only
-  /// if it starts with the [prefix] and ends with the [suffix].
-  /// Otherwise returns this [String] unchanged.
   String removeSurrounding({required String prefix, required String suffix}) {
     if (startsWith(prefix) && endsWith(suffix)) {
       return substring(prefix.length, length - suffix.length);
@@ -224,14 +167,6 @@ extension StringExt on String {
     }
   }
 
-  /// Returns a new substring containing all characters between [start]
-  /// (inclusive) and [end] (inclusive).
-  /// If [end] is omitted, it is being set to `lastIndex`.
-  ///
-  ///  ```dart
-  /// print('awesomeString'.slice(0,6)); // awesome
-  /// print('awesomeString'.slice(7)); // String
-  /// ```
   String slice(int start, [int end = -1]) {
     final _start = start < 0 ? start + length : start;
     final _end = end < 0 ? end + length : end;
@@ -248,16 +183,16 @@ extension StringExt on String {
   bool get isNotNullOrEmpty => !isNullOrEmpty;
 }
 
-extension StringJoin<T extends Iterable> on T {
+extension StringJoin<D extends Iterable> on D {
   String joinToString({
     String? separator,
     String? prefix,
     String? postfix,
     int? limit,
     String? truncated,
-    Function(T)? transform,
+    Function(D)? transform,
   }) {
-    return Utils.joinStringUtils<T>(
+    return Utils.joinStringUtils<D>(
       this,
       separator: separator ?? ', ',
       prefix: prefix ?? '',
