@@ -1,5 +1,5 @@
 [![Pub Version](https://img.shields.io/pub/v/dart_std?style=for-the-badge)](https://pub.dev/packages/dart_std)
-[![GitHub issues](https://img.shields.io/github/issues/debojyoti452/dart_std?style=for-the-badge)](https://github.com/debojyoti452/dart_std/issues)
+[![GitHub issues](https://img.shields.io/github/issues/debojyoti452/dart_std?style=for-the-badge)](https://github.com/debojyoti452/dart_std/issues) 
 [![GitHub stars](https://img.shields.io/github/stars/debojyoti452/dart_std?style=for-the-badge)](https://github.com/debojyoti452/dart_std/stargazers)
 
 ## Getting started 🎉
@@ -8,13 +8,13 @@ Add the following to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  dartx: any
+  dart_std: any
 ```
 
 After you import the library, you can use the extensions.
 
 ```dart
-import 'package:dartx/dartx.dart';
+import 'package:dart_std/dart_std.dart';
 
 final slice = [1, 2, 3, 4, 5].slice(1, -2); // [2, 3, 4]
 ```
