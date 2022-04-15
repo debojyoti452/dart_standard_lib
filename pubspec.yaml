@@ -1,7 +1,7 @@
 name: dart_std
 description: A Open Source Project.
-version: 0.0.1
-homepage:
+version: 0.0.2
+homepage: https://github.com/debojyoti452/dart_standard_lib
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,6 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  characters: ^1.2.0
+  collection: ^1.15.0
 
 dev_dependencies:
   flutter_test:

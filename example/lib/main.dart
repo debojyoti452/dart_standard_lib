@@ -35,9 +35,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final int _counter = 0;
   final List<int> intArray = [0, 1, 2, 3];
-  final List<String> strArray = ["Deb", "Singha", "Ana", "Majumdar"];
+  final List<String> strArray = ["Deb", "Singha"];
   static const Triple<int, bool, String> _triple = Triple(1, false, "Deb");
-  final map = {"Deb": "Singha", "Ana": "Majumdar"};
+  final map = {"Deb": "Singha"};
 
   void _incrementCounter() {
     // debugPrint(2.toOrdinal());
