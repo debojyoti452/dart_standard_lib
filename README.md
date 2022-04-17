@@ -5,7 +5,7 @@
 ## Introduction
 
 
-## Getting started 🎉
+## Installation
 
 Add the following to your `pubspec.yaml`:
 
