@@ -1,4 +1,4 @@
-class DynamicNumber {
+abstract class DynamicNumber implements Comparable<DynamicNumber> {
   DynamicNumber(this.value);
 
   final num value;
