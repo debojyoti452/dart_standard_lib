@@ -8,7 +8,7 @@ abstract class DynamicNumber implements Comparable<DynamicNumber> {
 
   @override
   int get hashCode {
-    return value.hashCode;
+    return value.hashCode ^ value.hashCode.hashCode;
   }
 
   @override
