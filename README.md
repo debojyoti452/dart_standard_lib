@@ -11,7 +11,7 @@ Add the following to your `pubspec.yaml`:
 
 ```dart
 dependencies:
-  dart_std: any
+  dart_std: latest_version
 ```
 
 After you import the library, you can use the extensions.

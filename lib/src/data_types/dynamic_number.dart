@@ -22,8 +22,8 @@
  *
  */
 
-import 'package:flutter_test/flutter_test.dart';
+part of dart_std;
 
-void main() {
-  test('adds one to input values', () {});
+abstract class DynamicNumber {
+  external const factory DynamicNumber.fromEnvironment(String name);
 }
