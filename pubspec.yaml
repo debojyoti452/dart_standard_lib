@@ -12,8 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  characters: 1.2.1
-  collection: 1.17.0
+  characters: ^1.2.1
+  collection: ^1.17.0
 
 dev_dependencies:
   flutter_test:
