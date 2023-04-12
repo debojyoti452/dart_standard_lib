@@ -76,3 +76,6 @@ build/
 
 # .lock files from gitignore
 **/**.lock
+
+# FVM related files
+.fvm/
