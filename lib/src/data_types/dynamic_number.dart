@@ -1,20 +1,29 @@
-abstract class DynamicNumber implements Comparable<DynamicNumber> {
-  DynamicNumber(this.value);
+/*
+ * *
+ *  * * GNU General Public License v3.0
+ *  * *******************************************************************************************
+ *  *  *  Created By Debojyoti Singha
+ *  *  *  Copyright (c) 2023.
+ *  *  * This program is free software: you can redistribute it and/or modify
+ *  *  * it under the terms of the GNU General Public License as published by
+ *  *  * the Free Software Foundation, either version 3 of the License, or
+ *  *  * (at your option) any later version.
+ *  *  *
+ *  *  * This program is distributed in the hope that it will be useful,
+ *  *  *
+ *  *  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  *  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  *  * GNU General Public License for more details.
+ *  *  *
+ *  *  * You should have received a copy of the GNU General Public License
+ *  *  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *  *  * Contact Email: support@swingtechnologies.in
+ *  * ******************************************************************************************
+ *
+ */
 
-  final num value;
+part of dart_std;
 
-  @override
-  String toString() => '$value';
-
-  @override
-  int get hashCode {
-    return value.hashCode ^ value.hashCode.hashCode;
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (other is! DynamicNumber) return false;
-    return value == other.value;
-  }
+abstract class DynamicNumber {
+  external const factory DynamicNumber.fromEnvironment(String name);
 }
