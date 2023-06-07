@@ -129,11 +129,12 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Second Screen'),
-        ),
-        body: const Center(
-          child: Text('Second Screen'),
-        ));
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+      ),
+      body: const Center(
+        child: Text('Second Screen'),
+      ),
+    );
   }
 }
