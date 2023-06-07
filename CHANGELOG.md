@@ -6,3 +6,8 @@ Readme Updated. Code Clean up.
 
 Added support for `--no-ansi` option.
 Flutter Version Support: 3.7.*
+
+## 0.0.6
+Added Navigation, Color Extension.
+Flutter Version Support: 3.10.*
+Readme Updated.

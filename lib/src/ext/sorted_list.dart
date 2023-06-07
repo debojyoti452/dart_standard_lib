@@ -24,6 +24,7 @@
 
 part of dart_std;
 
+// ignore: unused_element
 Comparator<D> _getComparator<D>(
     int order, Comparable Function(D element) selector,
     {Comparator<D>? parent}) {

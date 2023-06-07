@@ -24,11 +24,11 @@
 
 library dart_std;
 
-import 'dart:ui';
 
 import 'package:characters/characters.dart' as chr;
 import 'package:collection/collection.dart' as std;
-import 'package:dart_std/src/utils/utils.dart';
+import 'src/utils/utils.dart';
+import 'package:flutter/material.dart';
 
 part 'src/ext/int_ext.dart';
 part 'src/ext/list_ext.dart';
@@ -38,3 +38,4 @@ part 'src/ext/string_ext.dart';
 part 'src/utils/pair.dart';
 part 'src/utils/triple.dart';
 part 'src/data_types/dynamic_number.dart';
+part 'src/ext/context_ext.dart';

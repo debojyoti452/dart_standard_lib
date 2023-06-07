@@ -59,9 +59,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final int _counter = 0;
   final List<int> intArray = [0, 1, 2, 3];
-  final List<String> strArray = ["Deb", "Singha"];
-  static const Triple<int, bool, String> _triple = Triple(1, false, "Deb");
-  final map = {"Deb": "Singha"};
+  final List<String> strArray = ['Deb', 'Singha'];
+  static const Triple<int, bool, String> _triple = Triple(1, false, 'Deb');
+  final map = {'Deb': 'Singha'};
   late DynamicNumber? pointNum;
 
   void _incrementCounter() {
@@ -80,6 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
     debugPrint(20.divide(2.5).toString());
     debugPrint(intArray.joinToString());
     debugPrint(strArray.joinToString());
+
+    context.navigateTo(const SecondScreen());
   }
 
   @override
@@ -102,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -113,5 +115,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SecondScreen> createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Second Screen'),
+        ),
+        body: const Center(
+          child: Text('Second Screen'),
+        ));
   }
 }

@@ -22,6 +22,39 @@ import 'package:dart_std/dart_std.dart';
 2.toOrdinal(); // 2nd
 ```
 
+## Navigation
+
+```dart
+import 'package:dart_std/dart_std.dart';
+
+context.navigateTo(const SecondScreen);
+
+// or
+
+context.navigateToAndRemoveAll(const SecondScreen());
+
+// or
+
+context.navigateToNamed(const SecondScreen.routeName);
+
+// or
+
+context.navigateToNamedAndRemoveAll(const SecondScreen.routeName);
+
+// or
+
+context.navigatePop();
+
+// or
+
+context.navigatePopUntil(const SecondScreen.routeName);
+```
+
+## Color 
+```dart
+"#00000".toColor(); // Color(0xFF00000)
+```
+
 ## Iterable
 
 ### .joinToString()

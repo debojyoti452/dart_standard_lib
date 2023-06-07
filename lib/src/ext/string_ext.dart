@@ -158,12 +158,12 @@ extension StringExt on String {
   }
 
   String slice(int start, [int end = -1]) {
-    final _start = start < 0 ? start + length : start;
-    final _end = end < 0 ? end + length : end;
+    final start0 = start < 0 ? start + length : start;
+    final end0 = end < 0 ? end + length : end;
 
-    RangeError.checkValidRange(_start, _end, length);
+    RangeError.checkValidRange(start0, end0, length);
 
-    return substring(_start, _end + 1);
+    return substring(start0, end0 + 1);
   }
 
   /// Returns `true` if the string is either `null` or empty.
