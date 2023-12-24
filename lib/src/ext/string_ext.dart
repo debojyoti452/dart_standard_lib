@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 const _ascii = 0x007f;
 const _latin1 = 0x00ff;

@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 extension ListExt<D> on List<D> {
   int get lastIndex => length - 1;

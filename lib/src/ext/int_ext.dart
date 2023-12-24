@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 extension IntExt on num? {
   bool isNull() {

@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 class Pair<A, B> {
   const Pair(this._first, this._second);

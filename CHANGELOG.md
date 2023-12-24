@@ -11,3 +11,6 @@ Flutter Version Support: 3.7.*
 Added Navigation, Color Extension.
 Flutter Version Support: 3.10.*
 Readme Updated.
+
+## 0.0.7
+Removed `DynamicNumber` for web support.

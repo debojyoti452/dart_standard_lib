@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 class Triple<A, B, C> {
   const Triple(this._first, this._second, this._third);

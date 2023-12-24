@@ -21,7 +21,7 @@
  *  * ******************************************************************************************
  *
  */
-part of dart_std;
+part of '../../dart_std.dart';
 
 extension MapIndexEx<D> on Iterable<D> {
   Iterable<T> mapIndexed<T>(T Function(D e, int i) f) {

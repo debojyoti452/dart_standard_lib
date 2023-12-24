@@ -22,7 +22,7 @@
  *
  */
 
-part of dart_std;
+part of '../../dart_std.dart';
 
 // ignore: unused_element
 Comparator<D> _getComparator<D>(
